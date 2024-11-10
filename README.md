@@ -1,37 +1,42 @@
-Projet Civision
-Ce projet, développé pour Civision, permet de récupérer des offres d’emploi pour les clients français via l’API France Travail et de les enregistrer dans une base de données. Les données récupérées sont également analysées pour fournir des statistiques globales sur le marché de l’emploi par département, par type de contrat et par commune.
+# Projet Civision
 
-Table des Matières
-Fonctionnalités
-Installation
-Utilisation
-Endpoints
-Structure du Projet
-Gestion du Jeton d'Accès
-Technologies Utilisées
-Licence
-Fonctionnalités
-Récupération quotidienne des offres d’emploi : Les offres d’emploi sont récupérées et stockées dans la base de données.
-Historique des offres d’emploi : Permet de récupérer des offres sur une période spécifiée.
-Statistiques des offres d’emploi : Génère des statistiques d’emploi globales basées sur :
-Les départements
-Les types de contrat
-Les communes
-Installation
-Prérequis
-Python 3.x
-Flask
-Flask-SQLAlchemy
-Requests
-Flask-Swagger (pour la documentation API)
-Dotenv (pour la gestion des variables d'environnement)
-Étapes d’installation
-Clonez le dépôt :
+Ce projet, développé pour Civision, permet de récupérer des offres d’emploi pour les clients français via l’API France Travail et de les enregistrer dans une base de données. Les données récupérées sont également analysées pour fournir des statistiques globales sur le marché de l’emploi par département, type de contrat et commune.
 
-bash
-Copier le code
-git clone https://github.com/skandergammoudi/projet-civision
-cd projet-civision
+## Table des Matières
+- [Fonctionnalités](#fonctionnalités)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Endpoints](#endpoints)
+- [Structure du Projet](#structure-du-projet)
+- [Gestion du Jeton d'Accès](#gestion-du-jeton-daccès)
+- [Technologies Utilisées](#technologies-utilisées)
+- [Licence](#licence)
+
+---
+
+## Fonctionnalités
+
+- **Récupération quotidienne des offres d’emploi** : Les offres d’emploi sont récupérées et stockées dans la base de données.
+- **Historique des offres d’emploi** : Permet de récupérer des offres sur une période spécifiée.
+- **Statistiques des offres d’emploi** : Génère des statistiques d’emploi globales basées sur les départements, les types de contrat et les communes.
+
+---
+
+## Installation
+
+### Prérequis
+- Python 3.x
+- Flask
+- Flask-SQLAlchemy
+- Requests
+- Flask-Swagger (pour la documentation API)
+- Dotenv (pour la gestion des variables d'environnement)
+
+### Étapes d’installation
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/skandergammoudi/projet-civision
+   cd projet-civision
 Installez les dépendances :
 
 bash
@@ -55,20 +60,15 @@ Accédez à la documentation Swagger de l'API à l’adresse suivante : http://l
 Endpoints
 1. Récupération des offres d'emploi
 GET /job-postings/daily : Récupère les offres d’emploi du jour.
-
 GET /job-postings/historical : Récupère les offres d’emploi sur une période définie. Requiert les paramètres start_date et end_date au format YYYY-MM-DD.
-
 2. Statistiques des offres d'emploi
 GET /stats/jobs-by-department : Retourne le nombre d'offres par département.
-
 GET /stats/contract-type-evolution : Retourne le nombre d'offres par type de contrat.
-
 GET /stats/jobs-by-commune : Retourne le nombre d'offres par commune.
-
 Structure du Projet
 plaintext
 Copier le code
-projet-france-travail/
+projet-civision/
 ├── app.py                 # Fichier principal qui lance l'application Flask
 ├── fetch_daily_postings.py # Module pour récupérer les offres d'emploi
 ├── services/
